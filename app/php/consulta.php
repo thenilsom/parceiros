@@ -22,14 +22,14 @@ $app->post('/consultarParceiros', 'consultarParceiros');
 
 function consultarParceiros($request, $response){
 	$param = json_decode($request->getBody());
-	$cidade = trim(json_encode($param->cpf, JSON_UNESCAPED_UNICODE), '"');
+	$cidade = trim(json_encode($param->cidade, JSON_UNESCAPED_UNICODE), '"');
 	
 	$conexao = mysql_connect("mysql.segurosja.com.br", "segurosja", "m1181s2081_") or die ("problema na conexão");
 	mysql_set_charset('utf8',$conexao);
 
 	$rows = array();
 
- 	$sql = "SELECT codigo, fantasia, razao, cidade, uf, fone FROM imobs WHERE site='1' and cidade='$variavel_vinda_da_sua_aplicacao' order by fantasia asc";
+ 	$sql = "SELECT codigo, fantasia, razao, cidade, uf, fone FROM imobs WHERE site='1' and cidade='$cidade' order by fantasia asc";
 	
 	$consulta = mysql_db_query("segurosja", $sql) or die (mysql_error());
 

@@ -5,11 +5,13 @@
     	   var url = service.getUrl();
     	   
     	   var listar = function(){
-    	         $http.post(url + 'php/consulta.php/consultarParceiros', {codigo: codigoParam}).then(function(data){
-    	            $scope.listaTabela = data.data;
+    	         $http.post(url + 'php/consulta.php/consultarParceiros', {cidade : 'GOIÂNIA'}).then(function(data){
+    	            $scope.listaParceiros = data.data;
     	            }, function(erro){
     	             service.alertarErro(erro.statusText);
     	            });
     	       }
+    	   
+    	   listar();
     	   
     }]);

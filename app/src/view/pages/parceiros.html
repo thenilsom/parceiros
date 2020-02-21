@@ -1,10 +1,10 @@
 <div class="panel panel-primary">
-      <div class="panel-heading">Parceiros Goiânia</div>
+      <div class="panel-heading">Parceiros</div>
       <div class="panel-body margin-panel">
       <div class="row">
 		  <div class="col-sm-3 col-md-3" data-ng-repeat="parceiro in listaParceiros">
 		    <div class="thumbnail">
-		      <img src="./logos/porto_icone.png">
+		      <img data-ng-src="./logos/{{parceiro.codigo}}.jpg">
 		      <div class="caption">
 		        <h5><strong>{{parceiro.fantasia}}</strong></h5>
 		        <p>Fone: {{parceiro.fone}}</p>

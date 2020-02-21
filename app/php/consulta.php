@@ -29,7 +29,12 @@ function consultarParceiros($request, $response){
 
 	$rows = array();
 
- 	$sql = "SELECT codigo, fantasia, razao, cidade, uf, fone FROM imobs WHERE site='1' and cidade='$cidade' order by fantasia asc";
+	if($cidade == 'todas'){
+		$sql = "SELECT codigo, fantasia, razao, cidade, uf, fone FROM imobs WHERE site='1' order by fantasia asc";
+	}else{
+		$sql = "SELECT codigo, fantasia, razao, cidade, uf, fone FROM imobs WHERE site='1' and cidade='$cidade' order by fantasia asc";
+	}
+ 	
 	
 	$consulta = mysql_db_query("segurosja", $sql) or die (mysql_error());
 

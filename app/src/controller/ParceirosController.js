@@ -5,7 +5,7 @@
     	   var url = service.getUrl();
     	   
     	   var listar = function(){
-    	         $http.post(url + 'php/consulta.php/consultarParceiros', {cidade : 'GOIÂNIA'}).then(function(data){
+    	         $http.post(url + 'php/consulta.php/consultarParceiros', {cidade : 'todas'}).then(function(data){
     	            $scope.listaParceiros = data.data;
     	            }, function(erro){
     	             service.alertarErro(erro.statusText);

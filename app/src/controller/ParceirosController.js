@@ -4,14 +4,16 @@
 
     	   var url = service.getUrl();
     	   
-    	   var listar = function(){
-    	         $http.post(url + 'php/consulta.php/consultarParceiros', {cidade : 'todas'}).then(function(data){
+    	   $scope.filtroCidade = {cidade : 'todas'};
+    	   
+    	   $scope.listar = function(){
+    	         $http.post(url + 'php/consulta.php/consultarParceiros', {cidade : $scope.filtroCidade.cidade}).then(function(data){
     	            $scope.listaParceiros = data.data;
     	            }, function(erro){
     	             service.alertarErro(erro.statusText);
     	            });
     	       }
     	   
-    	   listar();
+    	   $scope.listar();
     	   
     }]);

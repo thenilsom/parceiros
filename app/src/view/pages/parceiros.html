@@ -1,40 +1,64 @@
 <div class="panel panel-primary">
-      <div class="panel-heading">Parceiros</div>
+      <div class="panel-heading">Imobiliárias Parceiras</div>
       <div class="panel-body margin-panel">
 
-<div layout="row" layout-padding>      
+<div layout="row" layout-xs="column" layout-padding>      
       <div class="md-block" flex-gt-sm="20" flex-xs="100">
-        <label for="cidade">Cidades Parceiras</label>
+        <label for="cidade">Cidades Atendidas</label>
         <select class="form-control" id="cidade" ng-tabindex="1" name="filtroCidade.cidade" 
         	data-ng-change="listar()"
           ng-model="filtroCidade.cidade"  focus>
-          <option value="ANÁPOLIS">ANÁPOLIS</option>
-          <option value="APARECIDA DE GOIÂNIA">APARECIDA DE GOIÂNIA</option>
-          <option value="BRASÍLIA">BRASÍLIA</option>
-          <option value="CAMPO VERDE">CAMPO VERDE</option>
-          <option value="CATALÃO">CATALÃO</option>
-          <option value="CUIABÁ">CUIABÁ</option>
+          <option value="todas">TODAS AS CIDADES</option>
+          
+          <optgroup label="BAHIA">  
           <option value="FEIRA DE SANTANA">FEIRA DE SANTANA</option>
-          <option value="GOIÂNIA">GOIÂNIA</option>
-          <option value="JARAGUÁ">JARAGUÁ</option>
-          <option value="JATAÍ">JATAÍ</option>
           <option value="JUAZEIRO">JUAZEIRO</option>
           <option value="LAURO DE FREITAS">LAURO DE FREITAS</option>
-          <option value="MARABÁ">MARABÁ</option>
-          <option value="MINEIROS">MINEIROS</option>
-          <option value="PALMAS">PALMAS</option>
-          <option value="PETROLINA">PETROLINA</option>
-          <option value="RIO VERDE">RIO VERDE</option>
-          <option value="RONDONÓPOLIS">RONDONÓPOLIS</option>
           <option value="SALVADOR">SALVADOR</option>
-          <option value="SÃO LUÍS DOS MONTES BELOS">SÃO LUÍS DOS MONTES BELOS</option>
-          <option value="SENADOR CANEDO">SENADOR CANEDO</option>
-          <option value="SINOP">SINOP</option>
-          <option value="TRINDADE">TRINDADE</option>
-          <option value="VALPARAÍSO DE GOIÁS">VALPARAÍSO DE GOIÁS</option>
-          <option value="VÁRZEA GRANDE">VÁRZEA GRANDE</option>
           <option value="VITÓRIA DA CONQUISTA">VITÓRIA DA CONQUISTA</option>
+        </optgroup>
+        
+         <optgroup label="DISTRITO FEDERAL">
+          	<option value="BRASÍLIA">BRASÍLIA</option>
+          </optgroup>
+        
+           <optgroup label="GOIÁS">
+	          <option value="ANÁPOLIS">ANÁPOLIS</option>
+	          <option value="APARECIDA DE GOIÂNIA">APARECIDA DE GOIÂNIA</option>
+          	  <option value="CATALÃO">CATALÃO</option>
+         	  <option value="GOIÂNIA">GOIÂNIA</option>
+          	  <option value="JARAGUÁ">JARAGUÁ</option>
+	          <option value="JATAÍ">JATAÍ</option>
+          	  <option value="MINEIROS">MINEIROS</option>
+          	  <option value="PETROLINA">PETROLINA</option>
+	          <option value="RIO VERDE">RIO VERDE</option>
+          	  <option value="SÃO LUÍS DOS MONTES BELOS">SÃO LUÍS DOS MONTES BELOS</option>
+	          <option value="SENADOR CANEDO">SENADOR CANEDO</option>
+	          <option value="TRINDADE">TRINDADE</option>
+          	<option value="VALPARAÍSO DE GOIÁS">VALPARAÍSO DE GOIÁS</option>
+	        </optgroup>
+          
+          <optgroup label="MATO GROSSO">
+          	<option value="CAMPO VERDE">CAMPO VERDE</option>
+          <option value="CUIABÁ">CUIABÁ</option>
+          <option value="RONDONÓPOLIS">RONDONÓPOLIS</option>
+          <option value="SINOP">SINOP</option>
+          <option value="VÁRZEA GRANDE">VÁRZEA GRANDE</option>
+          </optgroup>
+        
+        <optgroup label="PARÁ"> 
+          <option value="MARABÁ">MARABÁ</option>
+        </optgroup>
+        
+        <optgroup label="TOCANTINS"> 
+          <option value="PALMAS">PALMAS</option>
+        </optgroup>
+        
         </select>
+  </div>
+  
+  <div class="md-block" flex-gt-sm="80" flex-xs="100" style="text-align: right;">
+  	<span class="badge">{{listaParceiros.length}}</span> Imobiliári{{listaParceiros.length > 1 ? 'as' : 'a'}}
   </div>
  </div>
  
